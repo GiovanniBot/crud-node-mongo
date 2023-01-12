@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title><%= title %></title>
+    <link rel='stylesheet' href='/stylesheets/style.css' />
+  </head>
+  <body>
+    <h1><%= title %></h1>
+    <sub>Click to edit</sub>
+    <ul align="center">
+      <% docs.forEach(function(customer){ %>
+        <li style="width: 400px;display: flex;justify-content: space-between;">
+          <a href="/edit/<%= customer._id %>">
+            <%= customer.name %>
+          </a>
+          ------------------------
+          <a href="/delete/<%= customer._id %>" style="color: red;text-decoration: none;font-size: 1.2rem;font-weight: bold;" onclick="return confirm('Are you sure you want to remove <%= customer.name %>?');">
+            &cross;
+          </a>
+        </li>
+      <% }) %>
+    </ul>
+    <hr>
+    <a href="/new-client" target="_self">Register new client</a>
+  </body>
+</html>

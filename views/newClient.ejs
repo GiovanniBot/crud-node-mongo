@@ -1,0 +1,19 @@
+<html>
+  <head>
+    <title><%= title %></title>
+    <link rel='stylesheet' href='/stylesheets/style.css' />
+  </head>
+  <body>
+    <h1><%= title %></h1>
+    
+    <form action="<%= action %>" method="POST">
+      <label for="name">Name:</label>
+      <input id="name" type="text" name="name" value="<%= doc.name %>" />
+
+      <label for="age">Age:</label>
+      <input id="age" type="number" name="age" value="<%= doc.age %>" />
+
+      <button type="submit">Add client</button>
+    </form>
+  </body>
+</html>
